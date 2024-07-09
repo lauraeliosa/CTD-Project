@@ -43,6 +43,7 @@
   --size-700: 3rem;
   --size-800: 4rem;
   --size-900: 5rem;
+  --size-1000: 13rem;
 }
 
 
@@ -89,9 +90,7 @@ a:not([class]) {
 }
 
 /* Make images easier to work with */
-img,
-picture,
-svg {
+img {
   max-width: 100%;
   display: block;
 }
@@ -120,8 +119,8 @@ body{
   /* color: var(--clr-primary-400); */
 }
 
+
 .button {
-  display: inline-flex;
   cursor: pointer;
   text-decoration: none;
   border: 0;
@@ -146,49 +145,21 @@ body{
   color: var(--clr-accent-300);
 }
 
+h1{
+  font-size: var(--size-800);
+  margin-bottom: var(--size-400);
+}
 
+p{
+  font-size: var(--size-400);
+  
+}
 /* primary navigation */
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.navbar .navbar-brand{
-  color: var(--clr-accent-400);
-  font-weight: var(--fw-semi-bold);
-  font-size: var(--size-500);
-}
-.navbar-brand{
-  padding-left: var(--size-800);
-}
 
-.collapse.navbar-collapse {
-  display: flex;
-  justify-content: center;
-  flex-grow: 1;
-}
 
-.navbar-nav {
-  display: flex;
-  gap: clamp(var(--size-400), 5vw, var(--size-700));
-  font-weight: var(--fw-semi-bold);
-}
 
-.nav-item {
-  list-style: none;
-}
 
-.nav-list {
-  font-size: var(--fs-nav);
-}
 
-.nav-list a {
-  text-decoration: none;
-  color: var(--clr-primary-400);
-}
-.nav-list a:hover,
-.nav-list a:focus {
-  color: var(--clr-accent-400);
-} 
+
 
