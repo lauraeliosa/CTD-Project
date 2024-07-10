@@ -1,17 +1,20 @@
 const primaryHeader = document.querySelector('.primary-header');
-const navToggle = document.querySelector('.navbar-toggler');
-const primaryNav = document.querySelector('#navbarNav'); // Use the ID selector to match the target
+const navToggle = document.querySelector('.mobile-nav-toggle');
+const primaryNav = document.querySelector('.primary-navigation');
+
 
 navToggle.addEventListener('click', () => {
-  const isVisible = primaryNav.classList.contains('show'); // Bootstrap adds 'show' class to visible nav
-  navToggle.setAttribute('aria-expanded', !isVisible);
-  
-  // Toggle the 'show' class on the nav
-  primaryNav.classList.toggle('show');
-
-  // Optionally, toggle the overlay effect
-  primaryHeader.toggleAttribute('data-overlay');
+    // used for accessibility 
+    primaryNav.hasAttribute('data-visible')
+    ? navToggle.setAttribute('aria-expanded' , false)
+    : navToggle.setAttribute('aria-expanded' , true);
+// this toggles the 'data-visible' attribute on the primaryNav. When its present it will be removed and when its not there it will be added. 
+    primaryNav.toggleAttribute('data-visible');
+//this has something to do with the shadowing of the nav when its opened in the mobile 
+    primaryHeader.toggleAttribute('data-overlay');
 });
+
+
 
 
 

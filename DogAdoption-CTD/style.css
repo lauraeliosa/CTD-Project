@@ -2,7 +2,8 @@
   --clr-accent-500: hsl(12, 60%, 45%);
   --clr-accent-400: hsl(12, 88%, 59%);
   --clr-accent-300: hsl(12, 88%, 75%);
-  --clr-accent-100: hsl(13, 100%, 96%);
+  --clr-accent-200: hsl(12, 88%, 77%);
+  --clr-accent-100: hsl(0, 5%, 95%);
 
   --clr-primary-400: hsl(228, 39%, 23%);
 
@@ -119,6 +120,14 @@ body{
   /* color: var(--clr-primary-400); */
 }
 
+.container {
+  --max-width: 1110px ;
+  --container-padding: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--container-padding) * 2 ));
+  margin-inline: auto;
+}
+
 
 .button {
   cursor: pointer;
@@ -146,19 +155,163 @@ body{
 }
 
 h1{
-  font-size: var(--size-800);
+  font-size: var(--size-700);
+  font-weight: var(--fw-bold);
   margin-bottom: var(--size-400);
+  color: var(--clr-primary-400);
 }
 
 p{
   font-size: var(--size-400);
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-primary-400);
+  margin-bottom: var(--size-400);
   
 }
-/* primary navigation */
+/* =========Nav Button =========== */
+.mobile-nav-toggle {
+  display: none;
+}
+
+/* add the font style to the nav list both mobile and desktop sizes */
+.nav-list {
+  font-size: var(--fs-nav);
+}
+
+.nav-list {
+  display: flex;
+  /* the clamp prevents overcramping when the screen sizes gets smaller */
+  gap: clamp(var(--size-400), 5vw, var(--size-700));
+  font-weight: var(--fw-semi-bold);
+}
 
 
+.nav-list a {
+  text-decoration: none;
+  color: var(--clr-primary-400);
+}
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--clr-accent-400);
+}
 
 
+/* ========= Mobile Nav ================ */
+@media (max-width: 50em){
+  /* the navigation is not displayed automatically */
+.primary-navigation {
+  display: none;
+
+  position: fixed;
+  padding: var(--size-700);
+  /* defining the position of the elements edges combines top right left bottom into one property */
+  /* often used with position absolute or fixed */
+  inset: 7rem var(--size-400) auto;
+  /* even though you have the inset property you can still add max width and margin optionss */
+  max-width: 25rem;
+  margin-left: auto;
+  background-color: var(--clr-neutral-100);
+  border-radius: var(--size-100);
+  box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.05);
+}
+/* drop shadow thing -- attached to JS  */
+.primary-header[data-overlay]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgb(0 0 0 / 0 ) , rgb(0 0 0 / 0.8));
+  
+}
+
+/* styling for the list of links (ul) */
+.nav-list {
+  display: grid;
+  gap: var(--size-600);
+  text-align: center;
+  font-weight: var(--fw-bold);
+}
+
+
+/* navigation is displayed when you click on the toggle icon we set this up using javascript. The css just styles it.  */
+.primary-navigation[data-visible] {
+  display: grid;
+}
+
+
+/* hamburger icon */
+.mobile-nav-toggle {
+  display: block;
+  position: fixed;
+  top: var(--size-600);
+  right: var(--size-400);
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  padding: 0.5em;
+  }
+  
+  .mobile-nav-toggle .icon-close {
+  display: none;
+  }
+}
+
+/* navigation */
+
+
+.primary-header-logo{
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-bold);
+  font-size: var(--size-500);
+  color: var(--clr-accent-400);
+  text-decoration: none;
+}
+
+.primary-header {
+  padding-top: var(--size-700);
+  padding-bottom: var(--size-700);
+}
+
+.nav-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.display-sm-none {
+  display: none;
+}
+
+@media (min-width: 50em) {
+  .display-md-inline-flex {
+    display: inline-flex;
+  }
+}
+
+
+/* main section */
+
+
+/* for mobile */
+.padding-block-900 {
+  padding-block: var(--size-900);
+}
+
+.even-columns {
+  display: grid;
+  gap: 1rem;
+}
+
+
+/* for larger screen sizes */
+@media (min-width: 50em){
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    }
+  
+  }
+
+ 
 
 
 
