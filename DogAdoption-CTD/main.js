@@ -14,7 +14,7 @@ navToggle.addEventListener('click', () => {
     primaryHeader.toggleAttribute('data-overlay');
 });
 
-
+;
 
 
 

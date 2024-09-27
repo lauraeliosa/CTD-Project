@@ -45,6 +45,8 @@
   --size-800: 4rem;
   --size-900: 5rem;
   --size-1000: 13rem;
+
+  --box-shadow: 0px 10px 30px rgba(57,56,61,0.205);
 }
 
 
@@ -160,6 +162,14 @@ h1{
   margin-bottom: var(--size-400);
   color: var(--clr-primary-400);
 }
+
+h2 {
+  font-weight: var(--fw-bold);
+  font-size: var(--size-700);
+  color: var(--clr-primary-400);
+  text-align: center;
+}
+
 
 p{
   font-size: var(--size-400);
@@ -311,8 +321,21 @@ p{
   
   }
 
+/* second section */
+  
+  .padding-block-700 {
+    padding-block: var(--size-700);
+    
+  }
  
+.section-two {
+  padding-bottom: var(--size-900);
+  position: relative;
+  overflow: hidden;
+}
 
-
+.pets:hover {
+box-shadow: var(--box-shadow) ;
+}
 
 
